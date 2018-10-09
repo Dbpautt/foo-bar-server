@@ -4,17 +4,17 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const fooSchema = new Schema({
-  bar: {
+const icecreamSchema = new Schema({
+  flavour: {
     type: String,
     required: true
   },
-  baz: {
+  topping: {
     type: String,
     required: true
   }
 });
 
-const Foo = mongoose.model('Foo', fooSchema);
+const Icecream = mongoose.model('Icecream', icecreamSchema);
 
-module.exports = Foo;
+module.exports = Icecream;
