@@ -3,25 +3,25 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const data = require('../../data/foo');
+const data = require('../../data/icecreams');
 
-const Foo = require('../../models/foo.js');
+const Icecream = require('../../models/icecream.js');
 
-mongoose.connect('mongodb://localhost/foodb', {
+mongoose.connect('mongodb://localhost/icecreamdb', {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
 })
   .then(() => {
     console.log('Connected to Mongo!');
-    return Foo.remove({});
+    return Icecream.remove({});
   })
   .then(() => {
     console.log('Empty db');
-    return Foo.insertMany(data);
+    return Icecream.insertMany(data);
   })
   .then((results) => {
-    console.log('You have some foos', results.length);
+    console.log('You have some icecream', results.length);
     mongoose.connection.close();
   })
   .catch((error) => {

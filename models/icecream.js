@@ -12,6 +12,14 @@ const icecreamSchema = new Schema({
   topping: {
     type: String,
     required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  createdOn: {
+    type: Date,
+    default: Date.now
   }
 });
 
